@@ -1,13 +1,11 @@
 import pkg from "pg";
 const { Pool } = pkg;
 
-const isProduction = process.env.DATABASE_URL?.includes("render.com");
-
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: isProduction
-    ? { rejectUnauthorized: false }
-    : false,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 export default pool;

@@ -66,27 +66,27 @@ json
 
 ## How It Works
 
-1.If no matching contact exists:
+## If no matching contact exists:
 
-2.A new primary contact is created.
+* A new primary contact is created.
 
-3.If matching contacts exist:
+## If matching contacts exist:
 
-4.The oldest contact remains primary.
+* The oldest contact remains primary.
 
-5.Other primary contacts are converted to secondary.
+* Other primary contacts are converted to secondary.
 
-6.New unique email/phone is added as secondary.
+* New unique email/phone is added as secondary.
 
-7.The response always returns:
+* The response always returns:
 
-8.Primary Contact ID
+* Primary Contact ID
 
-9.All associated emails
+* All associated emails
 
-10.All associated phone numbers
+* All associated phone numbers
 
-11.All secondary contact IDs
+* All secondary contact IDs
 
 ---
 

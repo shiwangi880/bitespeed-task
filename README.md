@@ -92,13 +92,13 @@ json
 
 ## 🛠 Tech Stack
 
-Node.js
+* Node.js
 
-Express.js
+* Express.js
 
-PostgreSQL
+* PostgreSQL
 
-Render (Deployment)
+* Render (Deployment)
 
 ---
 
@@ -106,32 +106,32 @@ Render (Deployment)
 
 ## Table: Contact
 
-1.id (Primary Key)
+* id (Primary Key)
 
-2.email
+* email
 
-3.phoneNumber
+* phoneNumber
 
-4.linkedId (references Contact.id)
+* linkedId (references Contact.id)
 
-5.linkPrecedence ('primary' or 'secondary')
+* linkPrecedence ('primary' or 'secondary')
 
-6.createdAt
+* createdAt
 
-7.updatedAt
+* updatedAt
 
-8.deletedAt
+* deletedAt
 
 ---
 
 
 ## ⚙️ Running Locally
 
-Clone the repository
+* Clone the repository
 
-Install dependencies
+* Install dependencies
 
-npm install
+* npm install
 
 ---
 
@@ -146,8 +146,8 @@ node server.js
 
 ## 📌 Notes
 
-Root route ("/") is not defined.
+* Root route ("/") is not defined.
 
-Only /identify endpoint is exposed as required in the assignment.
+* Only /identify endpoint is exposed as required in the assignment.
 
-The project is fully deployed and production-ready.
+* The project is fully deployed and production-ready.

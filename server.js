@@ -1,10 +1,7 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import pool from "./db.js";
 import identifyRoute from "./routes/identify.js";
-
-dotenv.config();
 
 const app = express();
 
@@ -13,15 +10,37 @@ app.use(express.json());
 
 app.use("/identify", identifyRoute);
 
-//  Test DB connection when server starts
-pool.connect()
-  .then(() => {
-    console.log(" Connected to PostgreSQL");
-  })
-  .catch((err) => {
-    console.error(" Database connection error:", err);
-  });
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-  console.log(" Server running on port 3000");
-});
+async function startServer() {
+  try {
+    // Test DB connection
+    await pool.query("SELECT 1");
+    console.log("Connected to PostgreSQL");
+
+    // Create table if not exists
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS Contact (
+        id SERIAL PRIMARY KEY,
+        email VARCHAR(255),
+        phoneNumber VARCHAR(255),
+        linkedId INTEGER REFERENCES Contact(id),
+        linkPrecedence VARCHAR(20) CHECK (linkPrecedence IN ('primary', 'secondary')) NOT NULL,
+        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        deletedAt TIMESTAMP
+      );
+    `);
+
+    console.log("Contact table ready");
+
+    app.listen(PORT, () => {
+      console.log("Server running on port " + PORT);
+    });
+
+  } catch (err) {
+    console.error("Startup error:", err);
+  }
+}
+
+startServer();

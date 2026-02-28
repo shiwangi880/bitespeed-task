@@ -31,7 +31,7 @@ https://bitespeed-task-r0k3.onrender.com/identify
 
 ### Request Body (JSON)
 
-```json
+json
 {
   "email": "test@example.com",
   "phoneNumber": "1234567890"

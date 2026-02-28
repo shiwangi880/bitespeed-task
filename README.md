@@ -1,4 +1,4 @@
-# 🧾 Bitespeed Identity Reconciliation API
+#  Bitespeed Identity Reconciliation API
 
 This project is a solution to the Bitespeed Backend Task.
 
@@ -7,7 +7,7 @@ If multiple records belong to the same person, they are merged under a single pr
 
 ---
 
-## 🚀 Live Deployment
+##  Live Deployment
 
 Base URL:
 
@@ -15,7 +15,7 @@ https://bitespeed-task-r0k3.onrender.com
 
 ---
 
-## 📌 API Endpoint
+##  API Endpoint
 
 ### POST /identify
 
@@ -23,7 +23,7 @@ This endpoint accepts an email and/or phone number and returns consolidated cont
 
 ---
 
-## 📨 Request Format
+##  Request Format
 
 Send a POST request to:
 
@@ -90,7 +90,7 @@ json
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 * Node.js
 
@@ -102,7 +102,7 @@ json
 
 ---
 
-## 🗄 Database Schema
+##  Database Schema
 
 ## Table: Contact
 
@@ -125,7 +125,7 @@ json
 ---
 
 
-## ⚙️ Running Locally
+##  Running Locally
 
 * Clone the repository
 
@@ -144,7 +144,7 @@ node server.js
 ---
 
 
-## 📌 Notes
+##  Notes
 
 * Root route ("/") is not defined.
 

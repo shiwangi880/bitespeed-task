@@ -29,6 +29,8 @@ Send a POST request to:
 
 https://bitespeed-task-r0k3.onrender.com/identify
 
+---
+
 ### Request Body (JSON)
 
 json
@@ -39,7 +41,7 @@ json
 
 ---
 
-Sample Response
+## Sample Response
 
 {
   "contact": {
@@ -62,33 +64,33 @@ Sample Response
 ---
 
 
-How It Works
+## How It Works
 
-If no matching contact exists:
+1.If no matching contact exists:
 
-A new primary contact is created.
+2.A new primary contact is created.
 
-If matching contacts exist:
+3.If matching contacts exist:
 
-The oldest contact remains primary.
+4.The oldest contact remains primary.
 
-Other primary contacts are converted to secondary.
+5.Other primary contacts are converted to secondary.
 
-New unique email/phone is added as secondary.
+6.New unique email/phone is added as secondary.
 
-The response always returns:
+7.The response always returns:
 
-Primary Contact ID
+8.Primary Contact ID
 
-All associated emails
+9.All associated emails
 
-All associated phone numbers
+10.All associated phone numbers
 
-All secondary contact IDs
+11.All secondary contact IDs
 
 ---
 
-🛠 Tech Stack
+## 🛠 Tech Stack
 
 Node.js
 
@@ -100,30 +102,30 @@ Render (Deployment)
 
 ---
 
-🗄 Database Schema
+## 🗄 Database Schema
 
-Table: Contact
+## Table: Contact
 
-id (Primary Key)
+1.id (Primary Key)
 
-email
+2.email
 
-phoneNumber
+3.phoneNumber
 
-linkedId (references Contact.id)
+4.linkedId (references Contact.id)
 
-linkPrecedence ('primary' or 'secondary')
+5.linkPrecedence ('primary' or 'secondary')
 
-createdAt
+6.createdAt
 
-updatedAt
+7.updatedAt
 
-deletedAt
+8.deletedAt
 
 ---
 
 
-⚙️ Running Locally
+## ⚙️ Running Locally
 
 Clone the repository
 
@@ -133,16 +135,16 @@ npm install
 
 ---
 
-Create a .env file and add:
+## Create a .env file and add:
 DATABASE_URL=your_postgresql_connection_string
 
-Start the server
+## Start the server
 node server.js
 
 ---
 
 
-📌 Notes
+## 📌 Notes
 
 Root route ("/") is not defined.
 
